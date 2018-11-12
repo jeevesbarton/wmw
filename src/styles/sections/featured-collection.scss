@@ -1,0 +1,116 @@
+/**
+ * Sections: Featured collection
+ * -----------------------------------------------------------------------------
+ * Base styling for the featured collection product grid.
+ *
+ */
+
+$brandBlue: #036;
+$offWhite: #9b9b9b;
+$primaryFont: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$breakPointSM: 767px;
+$containerWidth: 1200px;
+
+.featured-collection {
+  text-align: center;
+
+  h2, p { font-family: $primaryFont; }
+
+  h2 {
+    color: $brandBlue;
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 49px;
+  }
+
+  p {
+    color: $offWhite;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 26px;
+  }
+
+  &__desc { padding: 0 30%; }
+
+  &__cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: $containerWidth;
+    margin: auto;
+  }
+
+  &__card {
+    flex: 1 0 20%;
+    padding: 20px;
+
+    img { width: 100%; }
+    a { text-decoration: none; }
+
+    &-image {
+      position: relative;
+      span {
+        font-family: $primaryFont;
+        position: absolute;
+        bottom: 0;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        background-color: #fff;
+        margin: 18px;
+        padding: 10px;
+        color: $brandBlue;
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 23px;
+        display: none;
+        cursor: pointer;
+      }
+
+      &:hover span {
+        display: block;
+      }
+    }
+
+    &-details {
+      text-align: left;
+      p, span {
+        font-family: $primaryFont;
+      }
+      p {
+        color: $brandBlue;
+        font-size: 21px;
+        font-weight: bold;
+        line-height: 26px;
+      }
+      span {
+        color: $offWhite;
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 26px;
+      }
+    }
+  }
+
+  &__view-collection {
+    font-family: $primaryFont;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 23px;
+    text-align: center;
+    background-color: $brandBlue;
+    margin-bottom: 10rem;
+    padding: 15px;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: $breakPointSM) {
+  .featured-collection__card {
+    flex: 1 0 35%;
+  }
+  .featured-collection__desc {
+    padding: 0 10%;
+  }
+}
